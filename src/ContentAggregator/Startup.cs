@@ -9,6 +9,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication.OAuth;
+using System.Text.Encodings.Web;
 
 namespace ContentAggregator
 {
@@ -76,6 +79,23 @@ namespace ContentAggregator
             app.UseApplicationInsightsExceptionTelemetry();
 
             app.UseStaticFiles();
+
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AuthenticationScheme = "Cookies",
+                AutomaticAuthenticate = true,
+                AutomaticChallenge = true,
+                LoginPath = new PathString("/Account/Login")
+            });
+
+            app.UseGoogleAuthentication(new GoogleOptions
+            {
+                AuthenticationScheme="Google",
+                SignInScheme = "Cookies",
+                ClientId = Configuration["Authentication:Google:ClientId"],
+                ClientSecret = Configuration["Authentication:Google:ClientSecret"],
+                CallbackPath = new PathString("/Account/Callback")
+            });
 
             //app.UseIdentity();
 
