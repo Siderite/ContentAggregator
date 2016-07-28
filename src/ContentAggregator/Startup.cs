@@ -90,11 +90,21 @@ namespace ContentAggregator
 
             app.UseGoogleAuthentication(new GoogleOptions
             {
-                AuthenticationScheme="Google",
+                AuthenticationScheme = "Google",
                 SignInScheme = "Cookies",
                 ClientId = Configuration["Authentication:Google:ClientId"],
                 ClientSecret = Configuration["Authentication:Google:ClientSecret"],
-                CallbackPath = new PathString("/Account/Callback")
+                CallbackPath = new PathString("/Account/Callback"),
+                Events = new OAuthEvents
+                {
+                    OnRemoteFailure = ctx =>
+                    {
+                        ctx.Response.Redirect("/Home/Error?ErrorMessage=" + UrlEncoder.Default.Encode(ctx.Failure.Message));
+                        ctx.HandleResponse();
+                        return Task.FromResult(0);
+                    }
+                }
+
             });
 
             //app.UseIdentity();
