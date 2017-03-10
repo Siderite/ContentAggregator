@@ -2,67 +2,41 @@
   "userSecretsId": "aspnet-ContentAggregator-f4c8b73a-6983-4453-a4ec-6893ed6d4130",
 
   "dependencies": {
-    "Microsoft.NETCore.App": {
-      "version": "1.0.0",
-      "type": "platform"
-    },
-    "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
-    "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
-    "Microsoft.AspNetCore.Diagnostics": "1.0.0",
-    "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0",
-    "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
-    "Microsoft.AspNetCore.Mvc": "1.0.0",
+    "Microsoft.NETCore.App": "1.1.1",
+    "Microsoft.ApplicationInsights.AspNetCore": "2.0.0",
+    "Microsoft.AspNetCore.Authentication.Cookies": "1.1.1",
+    "Microsoft.AspNetCore.Diagnostics": "1.1.1",
+    "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.1.1",
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.1.1",
+    "Microsoft.AspNetCore.Mvc": "1.1.2",
     "Microsoft.AspNetCore.Razor.Tools": {
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
-    "Microsoft.AspNetCore.StaticFiles": "1.0.0",
-    "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
-    "Microsoft.EntityFrameworkCore.SqlServer.Design": {
-      "version": "1.0.0",
-      "type": "build"
-    },
-    "Microsoft.EntityFrameworkCore.Tools": {
-      "version": "1.0.0-preview2-final",
-      "type": "build"
-    },
-    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
-    "Microsoft.Extensions.Configuration.Json": "1.0.0",
-    "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0",
-    "Microsoft.Extensions.Logging": "1.0.0",
-    "Microsoft.Extensions.Logging.Console": "1.0.0",
-    "Microsoft.Extensions.Logging.Debug": "1.0.0",
-    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
-    "Microsoft.VisualStudio.Web.CodeGeneration.Tools": {
-      "version": "1.0.0-preview2-final",
-      "type": "build"
-    },
-    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
-      "version": "1.0.0-preview2-final",
-      "type": "build"
-    },
-    "Microsoft.AspNetCore.Authentication.Google": "1.0.0"
-  },
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.1.1",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.1.1",
+    "Microsoft.AspNetCore.StaticFiles": "1.1.1",
+    "Microsoft.EntityFrameworkCore.SqlServer": "1.1.1",
+    "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.1",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.1.1",
+    "Microsoft.Extensions.Configuration.Json": "1.1.1",
+    "Microsoft.Extensions.Configuration.UserSecrets": "1.1.1",
+    "Microsoft.Extensions.Logging": "1.1.1",
+    "Microsoft.Extensions.Logging.Console": "1.1.1",
+    "Microsoft.Extensions.Logging.Debug": "1.1.1",
+    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.1",
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.1.0",
+    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": "1.1.0",
+    "Microsoft.AspNetCore.Authentication.Google": "1.1.1",
+    "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
+    "BundlerMinifier.Core": "2.4.337"  },
 
   "tools": {
-    "BundlerMinifier.Core": "2.0.238",
     "Microsoft.AspNetCore.Razor.Tools": "1.0.0-preview2-final",
-    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final",
-    "Microsoft.EntityFrameworkCore.Tools": "1.0.0-preview2-final",
-    "Microsoft.Extensions.SecretManager.Tools": "1.0.0-preview2-final",
-    "Microsoft.VisualStudio.Web.CodeGeneration.Tools": {
-      "version": "1.0.0-preview2-final",
-      "imports": [
-        "portable-net45+win8"
-      ]
-    }
-  },
+    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final"  },
 
   "frameworks": {
-    "netcoreapp1.0": {
+    "netcoreapp1.1": {
       "imports": [
         "dotnet5.6",
         "portable-net45+win8"
@@ -74,7 +48,9 @@
     "emitEntryPoint": true,
     "preserveCompilationContext": true
   },
-
+  "runtimes": {
+    "win10-x64": { }
+  },
   "runtimeOptions": {
     "configProperties": {
       "System.GC.Server": true
