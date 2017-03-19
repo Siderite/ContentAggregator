@@ -12,6 +12,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using System.Text.Encodings.Web;
+using ContentAggregator.Interfaces;
+using ContentAggregator.Services;
+using ContentAggregator.Jobs;
 
 namespace ContentAggregator
 {
@@ -55,6 +58,13 @@ namespace ContentAggregator
             services.AddMvc();
 
             // Add application services.
+
+            services
+                .AddTransient<ITimeService, TimeService>()
+                .AddTransient<IContentDataService, ContentDataService>()
+                .AddTransient<IContentService, ContentService>()
+                .AddTransient<IQueryDataService, QueryDataService>()
+                .AddTransient<QueryProcessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
